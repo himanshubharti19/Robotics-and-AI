@@ -1,0 +1,44 @@
+<launch>
+    <!-- Start the turtlesim node for turtle1 -->
+    <node name="turtlesim_node" pkg="turtlesim" type="turtlesim_node" output="screen" />
+
+    <!-- Delay for turtlesim_node to fully start -->
+    <node name="delay" pkg="rosbash" type="sleep" args="2" />
+
+    <!-- Spawn turtle2 at coordinates (4.6, 4.6) -->
+    <node pkg="rosservice" type="rosservice" name="spawn_turtle2" args="call /spawn 4.6 4.6 0.0 turtle2" />
+
+    <!-- Spawn turtle3 at coordinates (4.6, 6.6) -->
+    <node pkg="rosservice" type="rosservice" name="spawn_turtle3" args="call /spawn 4.6 6.6 0.0 turtle3" />
+
+    <!-- Publish constant velocity to turtle1 -->
+    <node name="move_turtle1" pkg="rostopic" type="rostopic" args="pub /turtle1/cmd_vel geometry_msgs/Twist -r 10 '{linear: {x: 1.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}'" output="screen" />
+
+    <!-- Publish constant velocity to turtle2 -->
+    <node name="move_turtle2" pkg="rostopic" type="rostopic" args="pub /turtle2/cmd_vel geometry_msgs/Twist -r 10 '{linear: {x: 1.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}'" output="screen" />
+
+    <!-- Publish constant velocity to turtle3 -->
+    <node name="move_turtle3" pkg="rostopic" type="rostopic" args="pub /turtle3/cmd_vel geometry_msgs/Twist -r 10 '{linear: {x: 1.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}'" output="screen" />
+</launch>
+k<launch>
+    <!-- Start the turtlesim node for turtle1 -->
+    <node name="turtlesim_node" pkg="turtlesim" type="turtlesim_node" output="screen" />
+
+    <!-- Delay for turtlesim_node to fully start -->
+    <node name="delay" pkg="rosbash" type="sleep" args="2" />
+
+    <!-- Spawn turtle2 at coordinates (4.6, 4.6) -->
+    <node pkg="rosservice" type="rosservice" name="spawn_turtle2" args="call /spawn 4.6 4.6 0.0 turtle2" />
+
+    <!-- Spawn turtle3 at coordinates (4.6, 6.6) -->
+    <node pkg="rosservice" type="rosservice" name="spawn_turtle3" args="call /spawn 4.6 6.6 0.0 turtle3" />
+
+    <!-- Publish constant velocity to turtle1 -->
+    <node name="move_turtle1" pkg="rostopic" type="rostopic" args="pub /turtle1/cmd_vel geometry_msgs/Twist -r 10 '{linear: {x: 1.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}'" output="screen" />
+
+    <!-- Publish constant velocity to turtle2 -->
+    <node name="move_turtle2" pkg="rostopic" type="rostopic" args="pub /turtle2/cmd_vel geometry_msgs/Twist -r 10 '{linear: {x: 1.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}'" output="screen" />
+
+    <!-- Publish constant velocity to turtle3 -->
+    <node name="move_turtle3" pkg="rostopic" type="rostopic" args="pub /turtle3/cmd_vel geometry_msgs/Twist -r 10 '{linear: {x: 1.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}'" output="screen" />
+</launch>

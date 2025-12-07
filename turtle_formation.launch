@@ -1,0 +1,17 @@
+<launch>
+    <!-- Start the turtlesim node for turtle1 -->
+    <node name="turtlesim_node" pkg="turtlesim" type="turtlesim_node" output="screen" />
+
+    <!-- Run spawn_turtles.py script using rosrun -->
+    <node name="spawn_turtles" pkg="com760_yourbcode" type="spawn_turtles.py" output="screen" />
+
+    <!-- Publish constant velocity to turtle1 -->
+    <node name="move_turtle1" pkg="rostopic" type="rostopic" args="pub /turtle1/cmd_vel geometry_msgs/Twist -r 10 '{linear: {x: 1.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}'" output="screen" />
+
+    <!-- Publish constant velocity to turtle2 -->
+    <node name="move_turtle2" pkg="rostopic" type="rostopic" args="pub /turtle2/cmd_vel geometry_msgs/Twist -r 10 '{linear: {x: 1.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}'" output="screen" />
+
+    <!-- Publish constant velocity to turtle3 -->
+    <node name="move_turtle3" pkg="rostopic" type="rostopic" args="pub /turtle3/cmd_vel geometry_msgs/Twist -r 10 '{linear: {x: 1.5, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}'" output="screen" />
+</launch>
+
