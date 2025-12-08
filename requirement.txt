@@ -1,0 +1,9 @@
+launch folder: contains launch files
+• urdf folder: contains the model files describing your robot
+
+• scripts folder: contains your python code
+• world folder: constains world description files
+• srv folder: contains your custom ROS services
+• msg folder: contains your custom ROS messages
+• CMakeLists.txt: list of cmake rules for compilation
+• Package.xml: Package information and dependencies
